@@ -13,8 +13,7 @@
 
 Route::get('/', function()
 {
-	//return View::make('hello');
-  return 'Hello, world';
+  return View::make('home');
 });
 
 Route::get('/books', function() {
@@ -58,5 +57,18 @@ Route::get('/practice/pre', function() {
   Pre::add($brady_boys, 'debug 2');
 
   echo Paste\Pre::r();
+
+});
+
+Route::get('/squirrel', function($squirrel) {
+
+    $data['squirrel'] = $squirrel;
+    return View::make('simple', $data);
+    
+});
+
+Route::get('/example', function() {
+
+  return View::make('example');
 
 });
